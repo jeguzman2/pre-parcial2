@@ -30,7 +30,7 @@
 Clonar el repositorio:
 
 ```bash id="br97vh"
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/jeguzman2/pre-parcial2.git
 ```
 
 Entrar al proyecto:
@@ -45,10 +45,10 @@ Instalar dependencias:
 npm install
 ```
 
-Crear un archivo `.env` en la raíz del proyecto:
+Ver archivo .env para ver credenciales de SUPABASE
 
 ```env id="d3aov8"
-DATABASE_URL=YOUR_DATABASE_URL
+DATABASE_URL=*****************
 ```
 
 Ejecutar el proyecto:
