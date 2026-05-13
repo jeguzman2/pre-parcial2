@@ -19,7 +19,11 @@ Acá esta el preparcial 2
 * Antes de realizar nuevas pruebas se recomienda limpiar los registros de las tablas `country` y `travel_plan`.
 * Para probar los endpoints se utilizó Postman.
 *Evidencia de base de datos: Para la revisión de esta consultaré tu correo para mandar invitación a la Base de Datos.
+* Acá está la evidencia de la base de datos vacía lista para el parcial:
 <img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/f677d4d1-7eff-4e43-bcd9-2cfc7787fd0b" />
+
+<img width="1919" height="917" alt="image" src="https://github.com/user-attachments/assets/41b43780-dfe0-4e1a-a2e6-092c49c09b73" />
+
 
 ---
 
