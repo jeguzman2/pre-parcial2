@@ -42,7 +42,7 @@ Clonar el repositorio:
 git clone https://github.com/jeguzman2/pre-parcial2.git
 ```
 
-Entrar al proyecto:
+Entrar al proyecto del Preparcial:
 
 ```bash
 cd travel-planner-api
@@ -54,13 +54,13 @@ Instalar dependencias:
 npm install
 ```
 
-Revisar archivo `.env` en la raíz del proyecto:
+Revisar archivo `.env` en la raíz del preparcial:
 
 ```env
 DATABASE_URL=***********************************
 ```
 
-Ejecutar el proyecto:
+Ejecutar:
 
 ```bash
 npm run start:dev
