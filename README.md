@@ -1,140 +1,29 @@
-# PREPARCIAL2
-
-Este es el preparcial 2 para el parcial 2. 
-
 ---
 
-# Tecnologías
+# Notas adicionales
 
-* NestJS
-* TypeORM
-* PostgreSQL
-* Supabase
-
----
-
-# Inciar el parcial:
-
-Clonar el repositorio:
-
-```bash
-git clone <URL_DEL_REPOSITORIO>
-```
-
-Entrar al proyecto:
-
-```bash
-cd travel-planner-api
-```
-
-Instalar dependencias:
-
-```bash
-npm install
-```
-
-Crear un archivo `.env`:
-
-```env
-DATABASE_URL=YOUR_DATABASE_URL
-```
-
-Ejecutar el proyecto:
-
-```bash
-npm run start:dev
-```
-
----
-
-# Estructura general
-
-El proyecto está dividido en dos módulos principales:
-
-## CountriesModule
-
-Se encarga de manejar la información de países de manera interna.
-Este módulo no tiene endpoints públicos.
-
-Su función principal es:
-
-* buscar países en la base de datos
-* consumir la API RestCountries si el país no existe
-* guardar la información localmente para reutilizarla después
-
----
-
-## TravelPlansModule
-
-Módulo encargado de los endpoints relacionados con los planes de viaje.
-
-Endpoints implementados:
+* El proyecto sigue una arquitectura modular utilizando las convenciones de NestJS.
+* CountriesModule funciona como un módulo interno y no expone controladores públicos.
+* La comunicación entre módulos se realiza mediante inyección de dependencias y exportación de servicios.
+* Se utilizó un provider separado para encapsular el consumo de la API RestCountries.
+* La lógica de caché se implementó almacenando los países consultados en PostgreSQL para evitar llamadas repetidas a la API externa.
+* Las entidades se encuentran organizadas por módulo dentro de carpetas `entities`.
+* Los DTOs se encuentran separados dentro de la carpeta `dto` para mantener la validación desacoplada de la lógica de negocio.
+* La base de datos utilizada fue PostgreSQL mediante Supabase.
+* Los registros pueden visualizarse desde Supabase en la sección `Table Editor`.
+* El proyecto utiliza `synchronize: true` para generar automáticamente las tablas durante el desarrollo.
+* Antes de realizar nuevas pruebas se recomienda limpiar los registros de las tablas `country` y `travel_plan`.
+* Para probar los endpoints se utilizó Postman.
 
 | Método | Endpoint            |
 | ------ | ------------------- |
-| POST   | `/travel-plans`     |
-| GET    | `/travel-plans`     |
-| GET    | `/travel-plans/:id` |
-| DELETE | `/travel-plans/:id` |
+| POST   | `http://localhost:3000/travel-plans`     |
+| GET    | `http://localhost:3000/travel-plans`     |
+| GET    | `http://localhost:3000/travel-plans/:id` |
+| DELETE | `http://localhost:3000/travel-plans/:id` |
 
----
+* Para acceso a la DB te mandaré un link para eso de invitación para que veas los cambios y los datos que se guarden. 
+<img width="1919" height="981" alt="image" src="https://github.com/user-attachments/assets/160d6ab4-6df3-48ad-aff8-50075714d29b" />
 
-# Funcionamiento de la caché
 
-Cuando se crea un plan de viaje, el servicio primero verifica si el país ya existe en PostgreSQL.
-
-* Si existe, reutiliza la información local.
-* Si no existe, consume la API RestCountries y guarda el país en la base de datos.
-
-De esta manera se evitan llamadas repetidas a la API externa.
-
----
-
-# Base de datos
-
-Se utilizó PostgreSQL mediante Supabase.
-
-Tablas utilizadas:
-
-* `country`
-* `travel_plan`
-
-Las tablas se crean automáticamente con TypeORM usando:
-
-```ts
-synchronize: true
-```
-
----
-
-# Validaciones
-
-Se implementaron DTOs para validar:
-
-* campos obligatorios
-* formato de fechas
-* código Alpha-3 del país
-
----
-
-# API externa utilizada
-
-```txt
-https://restcountries.com
-```
-
----
-
-# Ejemplo de petición
-
-## POST `/travel-plans`
-
-```json
-{
-  "title": "Viaje a Colombia",
-  "startDate": "2026-06-01",
-  "endDate": "2026-06-15",
-  "destinationCountryCode": "COL"
-}
-```
 
