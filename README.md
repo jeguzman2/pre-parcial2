@@ -25,5 +25,44 @@
 * Para acceso a la DB te mandaré un link para eso de invitación para que veas los cambios y los datos que se guarden. 
 <img width="1919" height="981" alt="image" src="https://github.com/user-attachments/assets/160d6ab4-6df3-48ad-aff8-50075714d29b" />
 
+# Instalación
+
+Clonar el repositorio:
+
+```bash id="br97vh"
+git clone <URL_DEL_REPOSITORIO>
+```
+
+Entrar al proyecto:
+
+```bash id="kwwd1v"
+cd travel-planner-api
+```
+
+Instalar dependencias:
+
+```bash id="dcjlwm"
+npm install
+```
+
+Crear un archivo `.env` en la raíz del proyecto:
+
+```env id="d3aov8"
+DATABASE_URL=YOUR_DATABASE_URL
+```
+
+Ejecutar el proyecto:
+
+```bash id="95r9qv"
+npm run start:dev
+```
+
+La aplicación correrá en:
+
+```txt id="e6g2rq"
+http://localhost:3000
+```
+
+
 
 
