@@ -6,11 +6,13 @@ import { TravelPlansService } from './travel-plans.service';
 
 import { TravelPlan } from './entities/travel-plan.entity';
 import { CountriesModule } from '../countries/countries.module';
+import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([TravelPlan]),
     CountriesModule,
+    UsersModule,
   ],
   controllers: [TravelPlansController],
   providers: [TravelPlansService],

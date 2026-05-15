@@ -11,6 +11,7 @@ import { CreateTravelPlanDto } from './dto/create-travel-plan.dto';
 
 import { CountriesService } from '../countries/countries.service';
 import { CreateExpenseDto } from './dto/create-expense.dto';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class TravelPlansService {
@@ -19,6 +20,7 @@ export class TravelPlansService {
     private readonly travelPlanRepository: Repository<TravelPlan>,
 
     private readonly countriesService: CountriesService,
+    private readonly usersService: UsersService,
   ) {}
 
   async create(
@@ -28,6 +30,15 @@ export class TravelPlansService {
     await this.countriesService.findByAlpha3Code(
       createTravelPlanDto.destinationCountryCode,
     );
+
+    
+  const user = await this.usersService.findOne(
+    createTravelPlanDto.userId,
+  );
+
+  if (!user) {
+    throw new NotFoundException('el usuario no esta ');
+  }
 
     const travelPlan = this.travelPlanRepository.create({
       ...createTravelPlanDto,
@@ -83,4 +94,6 @@ export class TravelPlansService {
 
   return this.travelPlanRepository.save(travelPlan);
 }
+
+
 }
