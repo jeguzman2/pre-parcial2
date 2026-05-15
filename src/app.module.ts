@@ -4,6 +4,7 @@ import { ConfigModule } from '@nestjs/config';
 import { CountriesModule } from './countries/countries.module';
 import { TravelPlansModule } from './travel-plans/travel-plans.module';
 import { UsersModule } from './users/users.module';
+import { MiddlewareModule } from './middleware/middleware.module';
 
 
 @Module({
@@ -27,6 +28,8 @@ import { UsersModule } from './users/users.module';
     TravelPlansModule,
 
     UsersModule,
+
+    MiddlewareModule,
   ],
 })
 export class AppModule {}
