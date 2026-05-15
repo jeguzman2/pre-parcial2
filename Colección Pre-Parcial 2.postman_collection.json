@@ -1,0 +1,257 @@
+{
+  "info": {
+    "_postman_id": "e9a27ce5-3ca9-48df-9e44-d773f24b26fd",
+    "name": "Colección Pre-Parcial 2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41547509"
+  },
+  "item": [
+    {
+      "name": "POST plan",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Viaje a Colombia\",\r\n  \"startDate\": \"2026-06-01\",\r\n  \"endDate\": \"2026-06-15\",\r\n  \"destinationCountryCode\": \"COL\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/travel-plans",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Prueba caché",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Segundo viaje\",\r\n  \"startDate\": \"2026-07-01\",\r\n  \"endDate\": \"2026-07-20\",\r\n  \"destinationCountryCode\": \"COL\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/travel-plans",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get todos los planes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/travel-plans",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "get 1 plan",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/travel-plans/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "borrar un plan",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/travel-plans/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST expenses parcial2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"description\": \"Hotel Tequendama\",\r\n  \"amount\": 300000,\r\n  \"category\": \"De paseo\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/travel-plans/4/expenses",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans",
+            "4",
+            "expenses"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET travel plans parcial2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/travel-plans/?x-user-id:=1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans",
+            ""
+          ],
+          "query": [
+            {
+              "key": "x-user-id:",
+              "value": "1",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET USuarios PARCIAL2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST Usuario parcial2",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"name\": \"Guz\",\r\n  \"email\": \"guz@gmail.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Viaje a Japón\",\r\n  \"startDate\": \"2026-06-01\",\r\n  \"endDate\": \"2026-06-15\",\r\n  \"destinationCountryCode\": \"JPN\",\r\n  \"userId\": 1\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/travel-plans",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "travel-plans"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
