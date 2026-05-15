@@ -10,6 +10,7 @@ import { TravelPlan } from './entities/travel-plan.entity';
 import { CreateTravelPlanDto } from './dto/create-travel-plan.dto';
 
 import { CountriesService } from '../countries/countries.service';
+import { CreateExpenseDto } from './dto/create-expense.dto';
 
 @Injectable()
 export class TravelPlansService {
@@ -67,4 +68,19 @@ export class TravelPlansService {
       );
     }
   }
+
+  async addExpense(id: number, expenseDto: CreateExpenseDto) {
+
+  const travelPlan = await this.travelPlanRepository.findOne({
+    where: { id },
+  });
+
+  if (!travelPlan) {
+    throw new NotFoundException('Travel plan not found');
+  }
+
+  travelPlan.expenses.push(expenseDto);
+
+  return this.travelPlanRepository.save(travelPlan);
+}
 }

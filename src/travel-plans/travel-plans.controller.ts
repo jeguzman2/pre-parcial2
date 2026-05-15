@@ -10,6 +10,7 @@ import {
 
 import { TravelPlansService } from './travel-plans.service';
 import { CreateTravelPlanDto } from './dto/create-travel-plan.dto';
+import { CreateExpenseDto } from './dto/create-expense.dto';
 
 @Controller('travel-plans')
 export class TravelPlansController {
@@ -48,4 +49,12 @@ export class TravelPlansController {
       message: `Travel plan with ID ${id} deleted successfully`,
     };
   }
+
+  @Post(':id/expenses')
+  async addExpense(
+    @Param('id') id: string,
+  @Body() createExpenseDto: CreateExpenseDto,
+) {
+  return this.travelPlansService.addExpense(+id, createExpenseDto);
+}
 }
