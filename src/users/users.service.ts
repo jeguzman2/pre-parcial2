@@ -20,4 +20,12 @@ export class UsersService {
     });
 
   }
+
+  async create(body: any): Promise<User> {
+
+    const user = this.userRepository.create(body as User);
+
+    return await this.userRepository.save(user);
+}
+  
 }

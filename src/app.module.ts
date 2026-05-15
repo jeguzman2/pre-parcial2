@@ -6,7 +6,6 @@ import { TravelPlansModule } from './travel-plans/travel-plans.module';
 import { UsersModule } from './users/users.module';
 import { MiddlewareModule } from './middleware/middleware.module';
 
-
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -28,6 +27,7 @@ import { MiddlewareModule } from './middleware/middleware.module';
     TravelPlansModule,
 
     UsersModule,
+
 
     MiddlewareModule,
   ],
