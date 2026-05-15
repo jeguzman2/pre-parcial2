@@ -1,98 +1,178 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# PREPARCIAL2
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Acá esta el preparcial 2
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+# Notas adicionales
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+* El preparcial sigue una arquitectura modular utilizando las convenciones de NestJS.
+* CountriesModule funciona como un módulo interno y no expone controladores públicos.
+* La comunicación entre módulos se realiza mediante inyección de dependencias y exportación de servicios.
+* Se utilizó un provider separado para encapsular el consumo de la API RestCountries.
+* La lógica de caché se implementó almacenando los países consultados en PostgreSQL para evitar llamadas repetidas a la API externa.
+* Las entidades se encuentran organizadas por módulo dentro de carpetas `entities`.
+* Los DTOs se encuentran separados dentro de la carpeta `dto` para mantener la validación desacoplada de la lógica de negocio.
+* La base de datos utilizada fue PostgreSQL mediante Supabase.
+* Los registros pueden visualizarse desde Supabase en la sección `Table Editor`.
+* El preparcial utiliza `synchronize: true` para generar automáticamente las tablas durante el desarrollo.
+* Antes de realizar nuevas pruebas se recomienda limpiar los registros de las tablas `country` y `travel_plan`.
+* Para probar los endpoints se utilizó Postman.
+*Evidencia de base de datos: Para la revisión de esta consultaré tu correo para mandar invitación a la Base de Datos.
+* Acá está la evidencia de la base de datos vacía lista para el parcial:
+<img width="1919" height="924" alt="image" src="https://github.com/user-attachments/assets/f677d4d1-7eff-4e43-bcd9-2cfc7787fd0b" />
 
-## Project setup
+<img width="1919" height="917" alt="image" src="https://github.com/user-attachments/assets/41b43780-dfe0-4e1a-a2e6-092c49c09b73" />
 
-```bash
-$ npm install
-```
 
-## Compile and run the project
+---
 
-```bash
-# development
-$ npm run start
+# Endpoints
 
-# watch mode
-$ npm run start:dev
+| Método | Endpoint                                 |
+| ------ | ---------------------------------------- |
+| POST   | `http://localhost:3000/travel-plans`     |
+| GET    | `http://localhost:3000/travel-plans`     |
+| GET    | `http://localhost:3000/travel-plans/:id` |
+| DELETE | `http://localhost:3000/travel-plans/:id` |
 
-# production mode
-$ npm run start:prod
-```
+---
 
-## Run tests
+# Instalación
+
+Clonar el repositorio:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+git clone https://github.com/jeguzman2/pre-parcial2.git
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Entrar al proyecto del Preparcial:
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+cd travel-planner-api
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Instalar dependencias:
 
-## Resources
+```bash
+npm install
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+Revisar archivo `.env` en la raíz del preparcial:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+```env
+DATABASE_URL=***********************************
+```
 
-## Support
+Ejecutar:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+```bash
+npm run start:dev
+```
 
-## Stay in touch
+La aplicación correrá en:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```txt
+http://localhost:3000
+```
 
-## License
+---
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+# Arquitectura y flujo de caché
+
+El proyecto está dividido en dos módulos principales:
+
+## CountriesModule
+
+Módulo interno encargado de manejar la información de países.
+No expone endpoints públicos y únicamente es utilizado desde otros módulos mediante inyección de dependencias.
+
+Funciones:
+
+* Buscar países en PostgreSQL
+* Consumir la API RestCountries
+* Guardar países en caché local
+
+---
+
+## TravelPlansModule
+
+Módulo encargado de exponer los endpoints públicos relacionados con los planes de viaje.
+
+Endpoints implementados:
+
+* POST `/travel-plans`
+* GET `/travel-plans`
+* GET `/travel-plans/:id`
+* DELETE `/travel-plans/:id`
+
+---
+
+# Flujo de caché
+
+Cuando se crea un plan de viaje:
+
+1. TravelPlansService solicita el país al CountriesService.
+2. CountriesService busca el país en PostgreSQL.
+3. Si el país existe, reutiliza la información almacenada.
+4. Si no existe, consume la API RestCountries.
+5. El país se guarda en PostgreSQL.
+6. Finalmente se crea el plan de viaje.
+
+La idea principal es evitar llamadas repetidas a la API externa reutilizando la información almacenada localmente.
+
+---
+
+# Ejemplos de peticiones JSON
+
+## Crear plan de viaje
+
+### POST `/travel-plans`
+
+```json
+{
+  "title": "Viaje a Colombia",
+  "startDate": "2026-06-01",
+  "endDate": "2026-06-15",
+  "destinationCountryCode": "COL"
+}
+```
+
+---
+
+## Crear otro plan reutilizando el caché
+
+### POST `/travel-plans`
+
+```json
+{
+  "title": "Viaje a Brasil",
+  "startDate": "2026-07-10",
+  "endDate": "2026-07-20",
+  "destinationCountryCode": "BRA"
+}
+```
+
+---
+
+## Obtener todos los planes
+
+### GET `/travel-plans`
+
+---
+
+## Obtener un plan por ID
+
+### GET `/travel-plans/1`
+
+---
+
+## Eliminar un plan
+
+### DELETE `/travel-plans/1`
+
+
+
+
+
+
